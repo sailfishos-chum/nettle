@@ -1,0 +1,3 @@
+[submodule "nettle"]
+	path = nettle
+	url = https://git.lysator.liu.se/nettle/nettle.git
