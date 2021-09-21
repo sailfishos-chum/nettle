@@ -14,6 +14,7 @@ BuildRequires:  gmp-devel
 BuildRequires:  libtool
 BuildRequires:  autoconf
 BuildRequires:  automake
+BuildRequires:  texinfo
 Requires(post): coreutils
 Requires(postun): coreutils
 
