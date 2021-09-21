@@ -14,7 +14,6 @@ BuildRequires:  gmp-devel
 BuildRequires:  libtool
 BuildRequires:  autoconf
 BuildRequires:  automake
-BuildRequires:  texinfo
 Requires(post): coreutils
 Requires(postun): coreutils
 
@@ -47,8 +46,6 @@ applications with nettle.
 %install
 %make_install
 make install-shared DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
-mkdir -p $RPM_BUILD_ROOT%{_infodir}
-install -p -m 644 nettle.info $RPM_BUILD_ROOT%{_infodir}/
 rm -f $RPM_BUILD_ROOT%{_bindir}/nettle-lfib-stream
 rm -f $RPM_BUILD_ROOT%{_bindir}/pkcs1-conv
 rm -f $RPM_BUILD_ROOT%{_bindir}/sexp-conv
@@ -64,14 +61,13 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/nettle-pbkdf2
 %files
 %doc AUTHORS NEWS README
 %license COPYINGv2 COPYING.LESSERv3
-%{_infodir}/nettle.info.*
 %{_libdir}/libnettle.so.8
 %{_libdir}/libnettle.so.8.*
 %{_libdir}/libhogweed.so.6
 %{_libdir}/libhogweed.so.6.*
 
 %files devel
-%doc descore.README nettle.html nettle.pdf
+%doc descore.README
 %{_includedir}/nettle
 %{_libdir}/libnettle.so
 %{_libdir}/libhogweed.so
