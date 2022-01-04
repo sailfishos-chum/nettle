@@ -28,12 +28,20 @@ or less any context: In crypto toolkits for object-oriented languages
 (C++, Python, Pike, ...), in applications like LSH or GNUPG, or even in
 kernel space.
 
+Categories:
+  - Library
+Custom:
+  Repo: https://github.com/sailfishos-chum/nettle
+
 %description devel
 Nettle is a cryptographic library that is designed to fit easily in more
 or less any context: In crypto toolkits for object-oriented languages
 (C++, Python, Pike, ...), in applications like LSH or GNUPG, or even in
 kernel space.  This package contains the files needed for developing
 applications with nettle.
+
+Custom:
+  Repo: https://github.com/sailfishos-chum/nettle
 
 %prep
 %setup -q -n %{name}-%{version}/nettle
