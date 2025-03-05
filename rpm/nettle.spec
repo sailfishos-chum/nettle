@@ -47,7 +47,16 @@ Custom:
 %setup -q -n %{name}-%{version}/nettle
 
 %build
-%reconfigure --enable-shared --disable-static --enable-fat
+%reconfigure --enable-shared --disable-static \
+    --enable-fat \
+    --disable-documentation \
+%ifarch ix86
+  --enable-x86-aesni \
+%endif
+%ifarch aarch64
+    --enable-arm64-crypto \
+%endif
+    %{nil}
 %make_build
 
 %install
