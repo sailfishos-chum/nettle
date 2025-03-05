@@ -47,7 +47,7 @@ Custom:
 %setup -q -n %{name}-%{version}/nettle
 
 %build
-%reconfigure --enable-shared --enable-fat
+%reconfigure --enable-shared --disable-static --enable-fat
 %make_build
 
 %install
