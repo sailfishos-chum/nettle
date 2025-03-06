@@ -1,5 +1,5 @@
 Name:           nettle
-Version:        3.7.3
+Version:        3.10.1
 Release:        1%{?dist}
 Summary:        A low-level cryptographic library
 
