@@ -1,5 +1,5 @@
 Name:           nettle
-Version:        3.7.3
+Version:        3.10.1
 Release:        1%{?dist}
 Summary:        A low-level cryptographic library
 
@@ -47,8 +47,16 @@ Custom:
 %setup -q -n %{name}-%{version}/nettle
 
 %build
-./.bootstrap
-%configure --enable-shared --enable-fat
+%reconfigure --enable-shared --disable-static \
+    --enable-fat \
+    --disable-documentation \
+%ifarch ix86
+  --enable-x86-aesni \
+%endif
+%ifarch aarch64
+    --enable-arm64-crypto \
+%endif
+    %{nil}
 %make_build
 
 %install
